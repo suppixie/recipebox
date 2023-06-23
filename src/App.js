@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { AllRecipes } from './allrecipes';
 
 function App() {
   return (
     <div className="App">
+      {/* header */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+          <h2>Recipe Box</h2>
+          <a href='/' target="_blank">Home</a>
+          <a href='/' target="_blank">Search</a>
+          <a href='/' target="_blank">Community</a>
+          <a href='/' target="_blank">Library</a>
       </header>
+
+      {/* landing page */}
+      <section>
+          <div className='landing_page'>
+              <h1>Delicious Vegan Recipes</h1>
+          </div>
+      </section>
+      {/* search-bar and random recipes */}
+      <section className='search_and_random'>
+        <div>
+            <div className='search_bar'>
+                <h2>Search for recipes</h2>
+                <input type='text' name='search_input' id="search_input" placeholder='Enter Ingredient/Dish'/>
+            </div>
+
+            <div className='random_dishes'>
+{/*               
+                <p>Vegan</p>
+                <p>Eggetarian</p>
+                <p>Meat</p>
+                <p>Vegetarian</p> */}
+
+                <AllRecipes/>
+            </div>
+        </div>
+      </section>
     </div>
   );
 }
