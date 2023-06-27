@@ -1,8 +1,18 @@
-// import logo from './logo.svg';
 import './App.css';
-import { AllRecipes } from './allrecipes';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => 
+    axios
+    .get(`https://api.bigoven.com/recipes?title_kw=oysters&pg=1&rpp=10&api_key=hC5Hu6FTCM97ZqMNWAEpu8zLKlUikn4m`)
+    .then((response) => 
+      console.log(response.data.Results))
+    .catch( (error) => console.error('Error fetching recipes:', error))
+    ,[])
+
   return (
     <div className="App">
       {/* header */}
@@ -35,12 +45,15 @@ function App() {
                 <p>Meat</p>
                 <p>Vegetarian</p> */}
 
-                <AllRecipes/>
+                {/* <AllRecipes/> */}
             </div>
         </div>
       </section>
     </div>
-  );
-}
+
+
+)};
 
 export default App;
+
+
