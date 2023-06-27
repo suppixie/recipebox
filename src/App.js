@@ -11,10 +11,10 @@ const App = () => {
       {/* header */}
       <header className="App-header">
           <h2>Recipe Box</h2>
-          <a href='/' target="_blank">Home</a>
-          <a href='/' target="_blank">Search</a>
+          <a href='/' target="_blank" >Home</a>
+          <a href='./components/categories.js' target="_blank">Categories</a>
           <a href='/' target="_blank">Community</a>
-          <a href='/' target="_blank">Library</a>
+          <a href='/' target="_blank">Profile</a>
       </header>
 
       {/* landing page */}

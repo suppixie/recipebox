@@ -8,7 +8,7 @@ const RandomRecipes = () =>{
 
   useEffect(() => {
     axios
-    .get(`https://api.spoonacular.com/recipes/random?apiKey=b5328ae4f8a442b8bae5518c50307ddb&limitLicense=true&number=5`)
+    .get(`https://api.spoonacular.com/recipes/random?apiKey=58d3c07e65364718a5ae8f75fe6fc1e9&limitLicense=true&number=5`)
     .then((response) =>{ setRandomRecipes(response.data.recipes)
       console.log(response.data.recipes)})
     .catch( (error) => console.error('Error fetching recipes:', error))}
