@@ -5,12 +5,12 @@ import axios from 'axios';
 const App = () => {
   const [recipes, setRecipes] = useState([]);
 
-  useEffect(() => 
+  useEffect(() => {
     axios
-    .get(`https://api.bigoven.com/recipes?title_kw=oysters&pg=1&rpp=10&api_key=hC5Hu6FTCM97ZqMNWAEpu8zLKlUikn4m`)
-    .then((response) => 
-      console.log(response.data.Results))
-    .catch( (error) => console.error('Error fetching recipes:', error))
+    .get(`https://api.bigoven.com/recipes?&pg=1&rpp=5&api_key=hC5Hu6FTCM97ZqMNWAEpu8zLKlUikn4m`)
+    .then((response) =>{ setRecipes(response.data.Results)
+      console.log(response.data.Results)})
+    .catch( (error) => console.error('Error fetching recipes:', error))}
     ,[])
 
   return (
@@ -39,13 +39,14 @@ const App = () => {
             </div>
 
             <div className='random_dishes'>
-{/*               
-                <p>Vegan</p>
-                <p>Eggetarian</p>
-                <p>Meat</p>
-                <p>Vegetarian</p> */}
-
-                {/* <AllRecipes/> */}
+            {recipes.map((recipe) => (
+              <div key={recipe.RecipeID}>
+                <img height={150} src={recipe.HeroPhotoUrl} alt={recipe.Title}></img>
+                <h2>{recipe.Title}</h2>
+                <p>Category: {recipe.Category}</p>
+                {/* Render other recipe details */}
+              </div>
+      ))}
             </div>
         </div>
       </section>
