@@ -1,31 +1,31 @@
-const apiQueries = {
-    app_id: process.env.REACT_APP_API_ID,
-    app_key: process.env.REACT_APP_API_KEY
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
+// const apiKey=process.env.REACT_APP_API_KEY;
+const RandomRecipes = () =>{
+  const [randomRecipes, setRandomRecipes] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get(`https://api.spoonacular.com/recipes/random?apiKey=b5328ae4f8a442b8bae5518c50307ddb&limitLicense=true&number=5`)
+    .then((response) =>{ setRandomRecipes(response.data.recipes)
+      console.log(response.data.recipes)})
+    .catch( (error) => console.error('Error fetching recipes:', error))}
+    ,[])
+
+  return(
+    <div>
+       {randomRecipes.map((randomrecipe) => (
+              <div key={randomrecipe.RecipeID}>
+                <img height={150} src={randomrecipe.image} alt={randomrecipe.title}></img>
+                <h2>{randomrecipe.title}</h2>
+                <p>Cuisine: {randomrecipe.cuisines[0]}</p>
+              </div>
+      ))}
+    </div>
+  )
+
 }
 
-export const fetchSearchData = async (recipeSearch) =>{
-    const {app_id,app_key} = apiQueries;
-    try { 
-        const recipeData = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${recipeSearch}&app_id=${app_id}&app_key=${app_key}&imageSize=REGULAR&random=true`)
-        const response = await recipeData.json()
-        return response;}
-    catch(error){
-        console.log(error);
-        return error;
-
-    }
-}
-
-
-export const fetchRandomDish = async () =>{
-    const {app_id,app_key} = apiQueries;
-    try { 
-        const recipeData = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${app_id}&app_key=${app_key}&health=vegan&imageSize=REGULAR&random=true`)
-        const response =await recipeData.json()
-        return response;}
-    catch(error){
-        console.log(error);
-        return error;
-
-    }
-}
+export default RandomRecipes;
