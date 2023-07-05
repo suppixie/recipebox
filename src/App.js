@@ -1,44 +1,21 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-import RandomRecipes from './api';
+import Home from './components/home';
+import React from 'react';
+import Navbar from './navbar';
+import AllRecipes from './components/allrecipes'
+import {BrowserRouter as Router,Routes,Route,} from 'react-router-dom';
+
 
 const App = () => {
-  
-
+ 
   return (
-    <div className="App">
-      {/* header */}
-      <header className="App-header">
-          <h2>Recipe Box</h2>
-          <a href='/' target="_blank" >Home</a>
-          <a href='./components/categories.js' target="_blank">Categories</a>
-          <a href='/' target="_blank">Community</a>
-          <a href='/' target="_blank">Profile</a>
-      </header>
-
-      {/* landing page */}
-      <section>
-          <div className='landing_page'>
-              <h1>Delicious Vegan Recipes</h1>
-          </div>
-      </section>
-      {/* search-bar and random recipes */}
-      <section className='search_and_random'>
-        <div>
-            <div className='search_bar'>
-                <h2>Search for recipes</h2>
-                <input type='text' name='search_input' id="search_input" placeholder='Enter Ingredient/Dish'/>
-            </div>
-
-            <div className='random_dishes'>
-            <RandomRecipes/>
-            </div>
-        </div>
-      </section>
+      <div className="App">
+        <Navbar/>
+          <Routes>
+                 <Route path='/' element={<Home/>}></Route>
+                 <Route path='/Categories' element={< AllRecipes />}></Route>
+          </Routes>
     </div>
-
-
 )};
 
 export default App;

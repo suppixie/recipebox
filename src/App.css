@@ -18,21 +18,6 @@ section{
   top: 0;
 }
 
-.App-header {
-  height: 10vmin;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffeaa9;
-  padding:0 5vw;
-  color: #F05D03;
-
-}
-
-.App-header a{
-  text-decoration: none;
-  color:#F05D03;
-}
 
 .landing_page{
   display: flex;

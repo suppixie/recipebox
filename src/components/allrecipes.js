@@ -2,7 +2,7 @@ import React,{ useEffect,useState } from "react";
 import axios from "axios";
 
 // const categories=['snacks','main course','breakfast','vegan','Indian']
-export function AllRecipes(){
+function AllRecipes(){
     const [snacksData, setSnacksData] = useState([])
     const [mainCourseData, setMainCourseData] = useState([])
     const [breakfastData, setBreakfastData] = useState([])
@@ -113,5 +113,7 @@ export function AllRecipes(){
         </div>
     )
 }
+
+export default AllRecipes;
 
 

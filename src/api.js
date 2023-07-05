@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
 // const apiKey=process.env.REACT_APP_API_KEY;
 const RandomRecipes = () =>{
   const [randomRecipes, setRandomRecipes] = useState([]);
@@ -17,7 +16,7 @@ const RandomRecipes = () =>{
   return(
     <div>
        {randomRecipes.map((randomrecipe) => (
-              <div key={randomrecipe.RecipeID}>
+              <div key={randomrecipe.id}>
                 <img height={150} src={randomrecipe.image} alt={randomrecipe.title}></img>
                 <h2>{randomrecipe.title}</h2>
                 <p>Cuisine: {randomrecipe.cuisines[0]}</p>

@@ -1,0 +1,23 @@
+.header{
+    background-color: papayawhip;
+    display: flex;
+    justify-content:space-between;
+    padding-left: 2vw;
+    height: 10vmin;
+
+}
+
+.pages ul{
+    display: flex;
+    list-style: none;
+}
+
+.pages ul li .page-items{
+text-decoration: none;
+color: black;
+letter-spacing: 2px;
+padding-right: 2vw;
+cursor: pointer;
+font-size:medium;
+}
+
