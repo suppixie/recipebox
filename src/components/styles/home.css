@@ -1,0 +1,23 @@
+
+.landing_page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E6E02B;
+    font-size:xx-large;
+  }
+  
+  .search_and_random{
+    background-color: #ffeaa9;
+    padding: 10vh;
+  }
+  .search_bar{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .random_dishes{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }

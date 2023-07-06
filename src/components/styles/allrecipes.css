@@ -1,0 +1,91 @@
+.categories_container{
+    display: grid;
+    grid-template-columns: 79vw 19vw;
+}
+.allrecipes{
+    margin: 0 2vw;
+}
+.category{
+    padding-bottom: 5vh;
+}
+
+
+.slick-slider{
+    height: 30vh;
+    margin-left: 1.5vw;
+    width: 95%;
+}
+
+.slick-active{
+    /* /* padding: 0 0.5vw; */
+    padding-left: 0.4vw; 
+    scroll-behavior: smooth;
+}
+.slide img{
+    
+    height: 100%;
+    width: 84%;
+    border-radius: 20px;
+}
+.slick-arrow {
+    top: 12vh;
+    border-radius: 15px;
+}
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 30px;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-track{
+    margin:0 0.8vw;
+    margin-left: 1vw;
+    /* vertical-align: middle; */
+}
+.slide p{
+    width: 85%;}
+
+.slide{
+    display: flex;
+    justify-content: center;
+    /* width: 85%; */
+    height: 100%;
+    cursor: pointer;
+    /* background-color: white; */
+    border-radius: 20px;
+}
+
+.slide:hover{
+    transform: scale(0.95);
+    transition: 0.4s;
+}
+
+.sidebar_menu{
+    margin-top: 4vh;
+}
+.keyword_search{
+    margin-left: 1.5vw;
+}
+
+.sidebar_menu input{
+    border-radius: 15px;
+    border: none;
+    outline:none;
+    padding: 1vh 1.5vh;
+}
+
+.sidebar_menu p{
+    padding-left:0.5vh;
+}
+.vr{
+    position: absolute;
+    display: block;
+    border-left: 4px solid rgba(255, 255, 255, 0.42);
+    height: 100%;
+    width: 1px;
+    margin: 0;
+    
+}

@@ -9,7 +9,7 @@ body{
   /* background-image: radial-gradient(circle,rgb(255, 147, 187),rgb(227, 142, 250),rgb(147, 242, 242)); */
   /* background-color:#ebd874; */
   background-color: #F05D03;
-  background-size:200vh;
+  /* background-size:200vh; */
 }
 
 section{
@@ -19,25 +19,3 @@ section{
 }
 
 
-.landing_page{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #E6E02B;
-  font-size:xx-large;
-}
-
-.search_and_random{
-  background-color: #ffeaa9;
-  padding: 10vh;
-}
-.search_bar{
-  display: flex;
-  justify-content: center;
-}
-
-.random_dishes{
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-}
