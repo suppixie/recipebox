@@ -12,6 +12,7 @@ export default function Navbar() {
           <ul>
                 <li><Link to="/" className='page-items'>Home</Link></li>
                 <li><Link to="/Categories"  className='page-items'>Categories</Link></li>
+                <li><Link to="/Community" className='page-items'>Community</Link></li>
           </ul>
       </div>
     </div>
