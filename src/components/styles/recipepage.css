@@ -1,0 +1,17 @@
+.details{
+    padding-left: 2vw;
+    padding-top: 5vh;
+}
+
+.recipe_primary_details{
+    display: flex;
+}
+
+.recipe_primary_details div{
+    margin-left: 2vw;
+}
+
+.recipe_primary_details div h2{
+    margin: 0;
+    padding: 0;
+}
