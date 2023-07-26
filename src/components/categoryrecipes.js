@@ -15,7 +15,6 @@ function CategoryRecipes({ heading }) {
                 const recipeWithImages= response.data.hits.filter((result)=> result.recipe.image);
                 setCategoryData(recipeWithImages.slice(0,6));
                 console.log(recipeWithImages.slice(0,6));
-                console.log(recipeWithImages.recipe);
             })
     },[]);
 
