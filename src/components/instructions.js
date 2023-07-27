@@ -39,10 +39,10 @@ function Instructions(props){
 
         return(
             <div className="instructions">
+                <h3>Instructions</h3>
                  {result.map((instruction,index)=>{
                     return(
                         <div>
-                            <h3>Instructions</h3>
                             <ul>
                                 <li key={index}>{instruction}</li>
                             </ul>
