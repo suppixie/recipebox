@@ -8,17 +8,14 @@
     font-size:xx-large;
   }
   
-  .search_and_random{
-    background-color: #ffeaa9;
-    padding: 5vh;
-  }
   .search_bar{
     display: flex;
     justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 4px;
+    padding: 1vh;
   }
   
-
-
   .specials {
     padding-left: 20px;
     padding-top: 20px;
@@ -30,14 +27,14 @@
     justify-content: space-between;
     text-align: center;
   }
-  .textbox2 {
+  .daily_specials_textarea {
     padding-bottom: 80px;
   }
-  .textbox2 h1{
+  .daily_specials_textarea h1{
     font-family:'Long Cang',cursive;
     font-size: 100px
   }
-  .textbox2 button {
+  .daily_specials_textarea button {
     font-size:medium;
     color:whitesmoke;
     background-color:black;
@@ -49,7 +46,7 @@
     margin-top: 1em;
     cursor:pointer;
   }
-  .items {
+  .random_recipe_items {
     width: 65%;
     align-items: center;
     padding-left: 15%;
@@ -57,7 +54,7 @@
     grid-template-columns: 50% 50%;
   }
  
-  .items img {
+  .random_recipe_items img {
     border-radius: 20px;
     width: 220px;
     height: 220px;
@@ -65,7 +62,7 @@
     display:block;
   }
 
-  .items h2 {
+  .random_recipe_items h2 {
     width: 230px;
     padding-top: 5px;
     font-family: 'Poppins', sans-serif;
