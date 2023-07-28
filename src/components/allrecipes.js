@@ -3,9 +3,16 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './styles/allrecipes.css'
 import CategoryRecipes from "./categoryrecipes";
+import { Link } from 'react-router-dom';
+
 
 
 function AllRecipes() {
+    const [searchItem, setSearchItem]=useState('');
+    const handleChange = (event) => {
+        setSearchItem(event.target.value);
+    }
+    
     return (
         <div className="categories_container">
             <div className="allrecipes">
@@ -19,8 +26,13 @@ function AllRecipes() {
             <div className="sidebar_menu">
                 <p className="vr" />
                 <div className="keyword_search">
-                    <input type='text' name='keyword_search_input' id="keyword_search_input" placeholder='Enter Ingredient/Dish' />
-                    <p>Keywords to try</p>
+                        <input className='search_bar' type='text' placeholder='Enter Ingredient/Dish'
+                            value={searchItem}
+                            onChange={handleChange}/>
+                         <Link to={`/search_results?query=${encodeURIComponent(searchItem)}`}>
+                                <button>search</button>
+                            </Link> 
+                    <p>Try Searching for</p>
                     <ul>
                         <li>Vegetarian</li>
                         <li>Pasta</li>
