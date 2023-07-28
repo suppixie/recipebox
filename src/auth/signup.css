@@ -3,7 +3,7 @@
     box-sizing: border-box;
     top: 0;
     margin: 0;
-    background-image: radial-gradient(circle,rgb(255, 147, 187),rgb(227, 142, 250),rgb(147, 242, 242));
+    /* background-image: radial-gradient(circle,rgb(255, 147, 187),rgb(227, 142, 250),rgb(147, 242, 242)); */
     background-size:200vh;
     scroll-behavior: smooth;
     color: white;
@@ -36,5 +36,9 @@ input{
     background-color: transparent;
     border: 1px solid white;
     color: white;
+}
+
+.pp_in_signup{
+    opacity:0;
 }
 
