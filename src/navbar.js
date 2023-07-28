@@ -15,6 +15,8 @@ export default function Navbar() {
                 <li><Link to="/Community" className='page-items'>Community</Link></li>
                 <li><Link to="/Login" className='page-items'>Login</Link></li>
                 <li><Link to="/Signup" className='page-items'>Sign Up</Link></li>
+                <li><Link to="/Profile" className='page-items'>profile</Link></li>
+
 
           </ul>
       </div>
