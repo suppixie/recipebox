@@ -1,0 +1,33 @@
+.profile_page{
+    display: flex;
+    margin: 0 2vw;
+}
+.baords{
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+}
+.boards .board{
+    height:20vh;
+    width: 16vw;
+    background-color: gray;
+    border-radius: 15px;
+}
+
+.boards .board p{
+    padding-left:2vh ;
+    transform:translateY(16vh) ;
+    background-color: white;
+    border-radius:6px ;
+}
+
+.pp{
+    padding: 5vh;
+    background-color: darkorchid;
+    color: white;
+    font-size: large;
+    border-radius: 100%;
+    width:5vh;
+}
+.profile_page hr{
+margin: 0 2vw;}
+
