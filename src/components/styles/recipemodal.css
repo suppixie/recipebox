@@ -1,0 +1,51 @@
+.details{
+    display: flex;
+    padding-left: 2vw;
+    padding-top: 5vh;
+    position: absolute;
+    border-radius: 20px;
+    top: 42.5vh;
+    width: 80%;
+    height: 80%;
+    transform: translate(8%, -36%);
+    z-index: 9999; /* Set a high z-index value to ensure the modal appears on top */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.ingredients_and_instructions{
+    margin-left: 2vw;
+    overflow-y: scroll;}
+
+/* .recipe_primary_details div{
+    display: flex;
+} */
+.recipe_primary_details img{
+    border-radius: 15px;
+}
+/* .recipe_primary_details div h2{
+    margin: 0;
+    padding: 0;
+} */
+.recipe_primary_details .closemodal{
+    transform: translateX(74vw);
+    background-color: rgb(214, 56, 56);
+    color: white;
+    border: none;
+    padding: 1vh;
+    border-radius: 6px;
+}
+/* .recipe_primary_details {
+    display: block;
+} */
+
+.recipe_primary_details p{
+    background-color: coral;
+    color: aliceblue;
+    border-radius: 8px;
+    padding:0 1vh;
+    margin: 0;
+    margin-bottom: 0.5vh;
+}

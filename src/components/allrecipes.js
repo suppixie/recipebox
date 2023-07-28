@@ -12,7 +12,7 @@ function AllRecipes() {
     const handleChange = (event) => {
         setSearchItem(event.target.value);
     }
-    
+
     return (
         <div className="categories_container">
             <div className="allrecipes">
@@ -34,10 +34,31 @@ function AllRecipes() {
                             </Link> 
                     <p>Try Searching for</p>
                     <ul>
-                        <li>Vegetarian</li>
-                        <li>Pasta</li>
-                        <li>Pizza</li>
-                        <li>Vegetarian</li>
+                        <Link to={`/search_results?query=${'Vegetarian'}`}><li>Vegetarian</li></Link>
+                        <Link to={`/search_results?query=${'Pasta'}`}><li>Pasta</li></Link>
+                        <Link to={`/search_results?query=${'Pizza'}`}><li>Pizza</li></Link>
+                        <Link to={`/search_results?query=${'Falafel'}`}><li>Falafel</li></Link>
+                        <Link to={`/search_results?query=${'Sushi'}`}><li>Sushi</li></Link>
+                        <Link to={`/search_results?query=${'Macaroni and Cheese'}`}><li>Macaroni and Cheese</li></Link>
+                        <Link to={`/search_results?query=${'Croissant'}`}><li>Croissant</li></Link>
+                        <Link to={`/search_results?query=${'Nachos'}`}><li>Nachos</li></Link>
+                        <Link to={`/search_results?query=${'Matcha cheesecake'}`}><li>Matcha cheesecake</li></Link>
+                        <Link to={`/search_results?query=${'Palak Paneer'}`}><li>Palak Paneer</li></Link>
+                        <Link to={`/search_results?query=${'Biryani'}`}><li>Biryani</li></Link>
+                        <Link to={`/search_results?query=${'Sorbet'}`}><li>Sorbet</li></Link>
+                        <Link to={`/search_results?query=${'Margarita'}`}><li>Margarita</li></Link>
+                        <Link to={`/search_results?query=${'Banana Bread'}`}><li>Banana Bread</li></Link>
+
+
+
+
+
+
+
+
+
+
+
 
                     </ul>
                     {/* {cuisineData.map((keyword)=()=>{

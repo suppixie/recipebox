@@ -3,7 +3,7 @@
    
 }
 .results{
-    width: 90%;
+    width: 88%;
     display: grid;
     grid-template-columns: auto auto auto auto;
 
@@ -17,7 +17,7 @@
      max-width: 80%;
     height: 40vh; 
     margin: 0;
-    margin-bottom: 2vh;
+    margin-bottom: 3.5vh;
   
     cursor: pointer;
 
