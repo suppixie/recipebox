@@ -3,9 +3,17 @@ import Slider from "react-slick";
 import './styles/categoryrecipes.css'
 import axios from "axios";
 import RecipeModal from "./recipemodal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import BoardPopup from './board_popup'
+import Popup from "reactjs-popup";
+
+
 
 function CategoryRecipes({ heading }) {
     const [categoryData, setCategoryData] = useState([]);
+    const [recipeUri , setRecipeUri]= useState('')
+
     useEffect(() => {
 
         axios.get(`https://api.edamam.com/api/recipes/v2?q=${heading}&type=public&beta=true&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}&imageSize=REGULAR&random=true`)
@@ -20,6 +28,7 @@ function CategoryRecipes({ heading }) {
             })
     },[]);
 
+    // Modal
     const [selectedRecipe, setSelectedRecipe] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
@@ -40,7 +49,12 @@ function CategoryRecipes({ heading }) {
             window.scrollTo(0, 0);
           }
     },[showModal])
+    // 
     
+    const handleRecipeUri = (uri)=>{
+        setRecipeUri(uri);
+        console.log(uri);
+    }
     let settings = {
         // dots: false,
         infinite: true,
@@ -56,16 +70,19 @@ function CategoryRecipes({ heading }) {
             <h2>{heading}</h2>
             <Slider  {...settings}>
                 {categoryData.map((result) => (
-                    <div key={result.recipe.uri} className="slide" onClick={() => openModal(result.recipe)}>
-                        <img src={result.recipe.image} alt={result.recipe.label} ></img>
-                        <p>{result.recipe.label}</p>
+                    <div key={result.recipe.uri} className="slide" >
+                        <button className="save_button" onClick={()=>{handleRecipeUri(result.recipe.uri);}}><Popup trigger={<FontAwesomeIcon icon={faBookmark}/>}><BoardPopup/></Popup> </button>
+                        <img onClick={() => openModal(result.recipe)} src={result.recipe.image} alt={result.recipe.label} ></img>
+                        <p onClick={() => openModal(result.recipe)}>{result.recipe.label}</p>
                     </div>
                 ))}
             </Slider>
             {selectedRecipe && (
                 <RecipeModal isOpen={showModal} onClose={closeModal} recipeDetails={selectedRecipe}/>)}
             {showModal && <div className="backdrop" onClick={closeModal}></div>}
-
+            {recipeUri &&(
+                <BoardPopup recipeData={recipeUri}/>
+                )}
         </div>
         
     );

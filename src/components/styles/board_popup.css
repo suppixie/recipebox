@@ -1,0 +1,36 @@
+.board_popup{
+    background-color: white;
+    border-radius: 15px;
+    padding: 2vh;
+    margin-top: 2vh;
+    width: 15vw;
+    transform: translateX(7vw);
+    filter:drop-shadow(1vh 1vh 1vh rgba(85, 85, 85, 0.656));
+    
+}
+
+.create_board_button{
+    background-color: rgba(128, 128, 128, 0.541);
+    padding: 1vh;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.boards_on_popup p{
+    display: block;
+    border: 1.5px black solid;
+    padding: 1vh;
+    margin-bottom:0 ;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.boards_on_popup p:hover{
+    background-color: rgba(128, 128, 128, 0.541)
+}
+
+
+.popup-arrow {
+transform: translateX(-6vh);
+transform: translateY(2.1vh);  
+}
