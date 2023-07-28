@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './styles/home.css';
-// import LoginPage from '../auth/login';
-// import SignUpPage from '../auth/signup';
-// import Recipe from '../auth/saverecipe';
+import { Link } from 'react-router-dom';
 
 
 function Home(){
     const [randomRecipes, setRandomRecipes] = useState([]);
+    const [searchItem, setSearchItem]=useState('');
+
 
   useEffect(() => {
     axios
@@ -16,13 +16,23 @@ function Home(){
       console.log(response.data.hits.slice(0,4))})
     .catch( (error) => console.error('Error fetching recipes:', error))}
     ,[])
+        
+    const handleChange = (event) => {
+        setSearchItem(event.target.value);
+    }
+    
 
     return (<>
         <section>
             <div className='landing_page'>
                 <div className='tagline'>
                     <h1>Savor The Flavour in Every Recipe!</h1>
-                    <input className='search_bar' type='text' name='search_input' id="search_input" placeholder='Enter Ingredient/Dish'/>
+                        <input className='search_bar' type='text' placeholder='Enter Ingredient/Dish'
+                            value={searchItem}
+                            onChange={handleChange}/>
+                         <Link to={`/search_results?query=${encodeURIComponent(searchItem)}`}>
+                                <button>search</button>
+                            </Link>
                 </div>
                 <div className='animation'>
                     <img></img>
@@ -33,7 +43,7 @@ function Home(){
               <div className="specials" data-scroll data-scroll-speed="-0.6">
                     <div className="daily_specials_textarea">
                         <h1 >Daily<br/>Specials</h1>
-                        <button className="Category-button" onClick="">View All Recipes</button>
+                        <Link to='./allrecipes.js'className="Category-button">View All Recipes</Link>
                     </div>
 
                     <div className="random_recipe_items">
@@ -51,9 +61,3 @@ function Home(){
 }
 
 export default Home;
-
-
-
-
-
-

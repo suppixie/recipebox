@@ -14,6 +14,8 @@
     background-color: antiquewhite;
     border-radius: 4px;
     padding: 1vh;
+    color: black;
+    border: none;
   }
   
   .specials {
@@ -34,7 +36,7 @@
     font-family:'Long Cang',cursive;
     font-size: 100px
   }
-  .daily_specials_textarea button {
+  .daily_specials_textarea a {
     font-size:medium;
     color:whitesmoke;
     background-color:black;
