@@ -5,14 +5,12 @@ import axios from "axios";
 import RecipeModal from "./recipemodal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-import BoardPopup from './board_popup'
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Popup from "reactjs-popup";
-
-
+import { useCookies } from "react-cookie";
 
 function CategoryRecipes({ heading }) {
     const [categoryData, setCategoryData] = useState([]);
-    const [recipeUri , setRecipeUri]= useState('')
 
     useEffect(() => {
 
@@ -51,10 +49,16 @@ function CategoryRecipes({ heading }) {
     },[showModal])
     // 
     
+    const [cookies,setCookie]=useCookies(['recipe']);
+
     const handleRecipeUri = (uri)=>{
-        setRecipeUri(uri);
-        console.log(uri);
+        setCookie('recipeUri',uri,{path:'/'});
     }
+    const [likeCount, setLikeCount]=useState(0);
+    const handleLikeCount =(e)=>{
+        setLikeCount(likeCount + 1)
+    }
+
     let settings = {
         // dots: false,
         infinite: true,
@@ -68,21 +72,26 @@ function CategoryRecipes({ heading }) {
     return (
         <div className="category snacks_recipe_list">
             <h2>{heading}</h2>
+
             <Slider  {...settings}>
                 {categoryData.map((result) => (
                     <div key={result.recipe.uri} className="slide" >
-                        <button className="save_button" onClick={()=>{handleRecipeUri(result.recipe.uri);}}><Popup trigger={<FontAwesomeIcon icon={faBookmark}/>}><BoardPopup/></Popup> </button>
                         <img onClick={() => openModal(result.recipe)} src={result.recipe.image} alt={result.recipe.label} ></img>
                         <p onClick={() => openModal(result.recipe)}>{result.recipe.label}</p>
+                        <div className="save_like_buttons">
+                            <button className="save_button" onClick={() => handleRecipeUri(result.recipe.uri)}>
+                                        <FontAwesomeIcon icon={faBookmark}/></button>
+                            <button className="like_button" onClick={(e) => handleLikeCount(likeCount)}>
+                                <FontAwesomeIcon icon={faHeart}/>{likeCount}</button>
+
+                        </div>
                     </div>
                 ))}
             </Slider>
             {selectedRecipe && (
                 <RecipeModal isOpen={showModal} onClose={closeModal} recipeDetails={selectedRecipe}/>)}
             {showModal && <div className="backdrop" onClick={closeModal}></div>}
-            {recipeUri &&(
-                <BoardPopup recipeData={recipeUri}/>
-                )}
+           
         </div>
         
     );
