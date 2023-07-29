@@ -1,6 +1,7 @@
 .profile_page{
     display: flex;
     margin: 0 2vw;
+    color: white;
 }
 .baords{
     display: grid;
@@ -18,6 +19,7 @@
     transform:translateY(16vh) ;
     background-color: white;
     border-radius:6px ;
+    color: black;
 }
 
 .pp{

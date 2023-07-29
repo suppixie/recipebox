@@ -1,11 +1,13 @@
 .categories_container{
     display: grid;
     grid-template-columns: 79vw 19vw;
+    color: white;
 }
 .allrecipes{
     margin: 0 2vw;
 }
 .category{
+    color: rgb(255, 43, 114);
 height: 40vh;}
 
 
