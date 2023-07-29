@@ -1,13 +1,12 @@
 import '../auth/login.css';
 import React, { useState } from 'react';
-// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useCookies } from 'react-cookie';
 
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [, setCookie] = useCookies(['user']);
+  const [setCookie] = useCookies(['user']);
 
 
 

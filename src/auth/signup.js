@@ -1,7 +1,6 @@
 import '../auth/signup.css';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
-import ProfilePage from '../components/profile';
 import LoginPage from './login';
 
 const SignUpPage = () => {

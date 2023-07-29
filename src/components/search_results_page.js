@@ -3,14 +3,16 @@ import RecipeModal from "./recipemodal";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import './styles/search_results_page.css';
+import { useCookies } from "react-cookie";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 
 function SearchResults(location){
     location= useLocation();
     const searchItem = new URLSearchParams(location.search).get('query');
     const [searchResults, setSearchResults] = useState([]);
-    const [selectedRecipe, setSelectedRecipe] = useState(null);
-    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         // Fetch the search results when the component mounts
@@ -26,7 +28,11 @@ function SearchResults(location){
                 console.log(filteredRecipes.slice(0,12));
             })
     },[searchItem]);
-    
+
+    // Modal
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+
     const openModal = (recipe) => {
         setSelectedRecipe(recipe);
         document.body.style.overflow = "hidden";
@@ -44,16 +50,35 @@ function SearchResults(location){
           }
     },[showModal])
 
+    const [cookies,setCookie]=useCookies(['recipe']);
 
+    const handleRecipeUri = (uri)=>{
+        setCookie('recipeUri',uri,{path:'/'});
+    }
+    const [likeCount, setLikeCount]=useState({});
+    const handleLikeCount = (uri) => {
+        setLikeCount((prevCounts) => ({
+          ...prevCounts,
+          [uri]: (prevCounts[uri] || 0) + 1,
+        }));
+      };
+    
     return(
             <>           
             <div className="results_page">
                 <h2>Search results for {searchItem}</h2>
                 <div className="results">
                     {searchResults.map((result) => (
-                    <div key={result.recipe.uri} className="search_slide" onClick={() => openModal(result.recipe)}>
-                        <img src={result.recipe.image} alt={result.recipe.label} />
-                        <p>{result.recipe.label}</p>
+                    <div key={result.recipe.uri} className="search_slide" >
+                        <img src={result.recipe.image} onClick={() => openModal(result.recipe)} alt={result.recipe.label} />
+                        <p onClick={() => openModal(result.recipe)}>{result.recipe.label}</p>
+                        <div className="save_like_buttons">
+                            <button className="save_button" onClick={() => handleRecipeUri(result.recipe.uri)}>
+                                        <FontAwesomeIcon icon={faBookmark}/></button>
+                            <button className="like_button" onClick={() => handleLikeCount(result.recipe.uri)}>
+                                <FontAwesomeIcon icon={faHeart}/> {likeCount[result.recipe.uri] || 0}</button>
+
+                        </div>
                     </div>
                     ))}
                 </div>

@@ -4,6 +4,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import './styles/allrecipes.css'
 import CategoryRecipes from "./categoryrecipes";
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -24,15 +26,17 @@ function AllRecipes() {
             </div>
 
             <div className="sidebar_menu">
-                <p className="vr" />
                 <div className="keyword_search">
+                        <div>
+
                         <input className='search_bar' type='text' placeholder='Enter Ingredient/Dish'
                             value={searchItem}
                             onChange={handleChange}/>
                          <Link to={`/search_results?query=${encodeURIComponent(searchItem)}`}>
-                                <button>search</button>
+                                <button className="search_button"><FontAwesomeIcon icon={faSearch}/></button>
                             </Link> 
-                    <p>Try Searching for</p>
+                            </div>
+                    <p>Try Searching for. . . </p>
                     <ul>
                         <Link to={`/search_results?query=${'Vegetarian'}`}><li>Vegetarian</li></Link>
                         <Link to={`/search_results?query=${'Pasta'}`}><li>Pasta</li></Link>

@@ -4,10 +4,14 @@
     top: 0;
     margin: 0;
     /* background-image: radial-gradient(circle,rgb(255, 147, 187),rgb(227, 142, 250),rgb(147, 242, 242)); */
-    background-size:200vh;
+    /* background-size:200vh; */
     scroll-behavior: smooth;
     color: white;
     display: block;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding:10vh 12vh;
+    width: 30vw;
 
 }
 
@@ -15,7 +19,7 @@
     padding: 2vh;
     font-size: 1em;
     margin-bottom: 3vh;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.895);
     border: 1px solid white;
     color: white;
     border-radius: 10px;
@@ -34,30 +38,13 @@
     justify-content: space-around;
     margin-top: 10vh;
 }
+.signup_and_login h2{
+    color: rgb(255, 43, 114);
+}
 .signup_and_login hr{
     margin: 0;
 }
-.sign_in{
-    display: block;
-    background-color:rgb(37, 40, 44);
-    padding: 1.5vw;
-    width: 20vw;
-    border-radius: 15px;
-    align-items: center;
-   
-}
-/* .login_page{
-    display: flex;
-    justify-content: center;
-    margin-top: 10vh;
-} */
 
-.registrationForm  *{
-    display: flex;
-    justify-content: center;
-    /* display: block;
-    justify-content: center;*/
-} 
 
 .pp_in_signup{
     opacity:0;

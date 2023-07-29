@@ -52,12 +52,16 @@ function CategoryRecipes({ heading }) {
     const [cookies,setCookie]=useCookies(['recipe']);
 
     const handleRecipeUri = (uri)=>{
-        setCookie('recipeUri',uri,{path:'/'});
+        setCookie('recipeUri',encodeURIComponent(uri),{path:'/'});
     }
-    const [likeCount, setLikeCount]=useState(0);
-    const handleLikeCount =(e)=>{
-        setLikeCount(likeCount + 1)
-    }
+    const [likeCount, setLikeCount]=useState({});
+    const handleLikeCount = (uri) => {
+        setLikeCount((prevCounts) => ({
+          ...prevCounts,
+          [uri]: (prevCounts[uri] || 0) + 1,
+        }));
+      };
+    
 
     let settings = {
         // dots: false,
@@ -81,8 +85,8 @@ function CategoryRecipes({ heading }) {
                         <div className="save_like_buttons">
                             <button className="save_button" onClick={() => handleRecipeUri(result.recipe.uri)}>
                                         <FontAwesomeIcon icon={faBookmark}/></button>
-                            <button className="like_button" onClick={(e) => handleLikeCount(likeCount)}>
-                                <FontAwesomeIcon icon={faHeart}/>{likeCount}</button>
+                            <button className="like_button" onClick={() => handleLikeCount(result.recipe.uri)}>
+                                <FontAwesomeIcon icon={faHeart}/> {likeCount[result.recipe.uri] || 0}</button>
 
                         </div>
                     </div>

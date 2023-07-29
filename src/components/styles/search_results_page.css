@@ -1,6 +1,8 @@
 .results_page{
     margin: 0 2vw;
-   
+}
+.results_page h2{
+    color: rgb(255, 43, 114);
 }
 .results{
     width: 88%;
@@ -15,7 +17,7 @@
     padding: 1.5vh;
      font-family: 'Poppins';
      max-width: 80%;
-    height: 40vh; 
+    height: 41vh; 
     margin: 0;
     margin-bottom: 3.5vh;
   
@@ -32,6 +34,9 @@
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+    margin-block-end: 0;
+    margin-block-start: 0.5vh;
+    height: 7.9vh;
 
     
 }
