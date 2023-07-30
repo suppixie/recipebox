@@ -4,7 +4,7 @@
     justify-content:space-between;
     padding-left: 2vw;
     height: 10vmin;
-    color: rgb(255, 43, 114);
+    color: rgb(210, 35, 94);
 
 }
 
@@ -16,7 +16,7 @@
 .pages ul li .page-items{
 text-decoration: none;
 color: black;
-letter-spacing: 2px;
+letter-spacing: 1.5px;
 padding-right: 2vw;
 cursor: pointer;
 font-size:medium;
