@@ -3,6 +3,8 @@ import axios from 'axios';
 import './styles/home.css';
 import { Link } from 'react-router-dom';
 import cooking from './Recipe.gif'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 function Home() {
@@ -35,12 +37,12 @@ function Home() {
             <div className='landing_page'>
                 <div className='tagline'>
                     <h1>Savor The Flavour<br/> in Every Recipe!</h1>
-                    <form onSubmit={e => handleSubmit(e)}>
+                    <form className='search_recipe' onSubmit={e => handleSubmit(e)}>
                         <input className='search_bar' type='text' placeholder='Enter Ingredient/Dish'
                             value={searchItem}
                             required
                             onChange={handleChange} />
-                        <button type='submit'>Search</button>
+                        <button type='submit'><FontAwesomeIcon icon={faSearch}/></button>
                     </form>
                 </div>
                 <div className='animation'>
