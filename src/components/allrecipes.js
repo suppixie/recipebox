@@ -10,9 +10,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 function AllRecipes() {
-    const [searchItem, setSearchItem]=useState('');
+    const [searchItem, setSearchItem] = useState('');
     const handleChange = (event) => {
         setSearchItem(event.target.value);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.assign(`/search_results?query=${encodeURIComponent(searchItem)}`)
     }
 
     return (
@@ -27,15 +31,12 @@ function AllRecipes() {
 
             <div className="sidebar_menu">
                 <div className="keyword_search">
-                        <div>
-
-                        <input className='search_bar' type='text' placeholder='Enter Ingredient/Dish'
+                    <form onSubmit={e => handleSubmit(e)}>
+                        <input className='search_bar' required type='text' placeholder='Enter Ingredient/Dish'
                             value={searchItem}
-                            onChange={handleChange}/>
-                         <Link to={`/search_results?query=${encodeURIComponent(searchItem)}`}>
-                                <button className="search_button"><FontAwesomeIcon icon={faSearch}/></button>
-                            </Link> 
-                            </div>
+                            onChange={handleChange} />
+                        <button type="submit" className="search_button"><FontAwesomeIcon icon={faSearch} /></button>
+                    </form>
                     <p>Try Searching for. . . </p>
                     <ul>
                         <Link to={`/search_results?query=${'Vegetarian'}`}><li>Vegetarian</li></Link>

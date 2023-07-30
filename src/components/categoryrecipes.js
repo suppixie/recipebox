@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Popup from "reactjs-popup";
-import { useCookies } from "react-cookie";
+import { Cookies, useCookies } from "react-cookie";
 
 function CategoryRecipes({ heading }) {
     const [categoryData, setCategoryData] = useState([]);
@@ -16,15 +16,15 @@ function CategoryRecipes({ heading }) {
 
         axios.get(`https://api.edamam.com/api/recipes/v2?q=${heading}&type=public&beta=true&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}&imageSize=REGULAR&random=true`)
             .then((response) => {
-                const filteredRecipes= response.data.hits.filter((result)=> {
-                    const imageUrl=result.recipe.image;
+                const filteredRecipes = response.data.hits.filter((result) => {
+                    const imageUrl = result.recipe.image;
                     return imageUrl && !imageUrl.includes("https://edamam-product-images.s3.amazonaws.com/web-img/564/5648dc3132160f07414fb225f45c1d09.gif");
 
-                    });
-                setCategoryData(filteredRecipes.slice(0,6));
-                console.log(filteredRecipes.slice(0,6));
+                });
+                setCategoryData(filteredRecipes.slice(0, 6));
+                console.log(filteredRecipes.slice(0, 6));
             })
-    },[]);
+    }, []);
 
     // Modal
     const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -42,26 +42,34 @@ function CategoryRecipes({ heading }) {
         document.body.style.overflow = "auto";
         setShowModal(false);
     };
-    useEffect(()=>{
+    useEffect(() => {
         if (showModal) {
             window.scrollTo(0, 0);
-          }
-    },[showModal])
+        }
+    }, [showModal])
     // 
-    
-    const [cookies,setCookie]=useCookies(['recipe']);
 
-    const handleRecipeUri = (uri)=>{
-        setCookie('recipeUri',encodeURIComponent(uri),{path:'/'});
+    const [cookies, setCookie] = useCookies(['recipeIds']);
+
+    const handleRecipeUri = (uri) => {
+        var url = String(uri).split("recipe_")[1];
+        var ids = [];
+        if (cookies.recipeIds) {
+            ids = cookies.recipeIds;
+        }
+        ids.push(url)
+        setCookie('recipeIds',ids, { path: '/' });
+        console.log(cookies.recipeIds)
+
     }
-    const [likeCount, setLikeCount]=useState({});
+    const [likeCount, setLikeCount] = useState({});
     const handleLikeCount = (uri) => {
         setLikeCount((prevCounts) => ({
-          ...prevCounts,
-          [uri]: (prevCounts[uri] || 0) + 1,
+            ...prevCounts,
+            [uri]: (prevCounts[uri] || 0) + 1,
         }));
-      };
-    
+    };
+
 
     let settings = {
         // dots: false,
@@ -72,7 +80,7 @@ function CategoryRecipes({ heading }) {
         slidesToScroll: 1,
     }
 
-   
+
     return (
         <div className="category snacks_recipe_list">
             <h2>{heading}</h2>
@@ -84,20 +92,20 @@ function CategoryRecipes({ heading }) {
                         <p onClick={() => openModal(result.recipe)}>{result.recipe.label}</p>
                         <div className="save_like_buttons">
                             <button className="save_button" onClick={() => handleRecipeUri(result.recipe.uri)}>
-                                        <FontAwesomeIcon icon={faBookmark}/></button>
+                                <FontAwesomeIcon icon={faBookmark} /></button>
                             <button className="like_button" onClick={() => handleLikeCount(result.recipe.uri)}>
-                                <FontAwesomeIcon icon={faHeart}/> {likeCount[result.recipe.uri] || 0}</button>
+                                <FontAwesomeIcon icon={faHeart} /> {likeCount[result.recipe.uri] || 0}</button>
 
                         </div>
                     </div>
                 ))}
             </Slider>
             {selectedRecipe && (
-                <RecipeModal isOpen={showModal} onClose={closeModal} recipeDetails={selectedRecipe}/>)}
+                <RecipeModal isOpen={showModal} onClose={closeModal} recipeDetails={selectedRecipe} />)}
             {showModal && <div className="backdrop" onClick={closeModal}></div>}
-           
+
         </div>
-        
+
     );
 }
 

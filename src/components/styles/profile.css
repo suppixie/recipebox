@@ -50,7 +50,8 @@
     border-radius: 15px;
     height: 80vh;
     display: grid;
-    grid-template-columns: 20% 20% 20%;
+    grid-template-columns: 35% 35% 35%;
+    grid-template-rows: 20% 20% 20%;
     padding: 2vh 2vh;
 
 }

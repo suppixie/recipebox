@@ -2,12 +2,15 @@
 
 .landing_page{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     color: rgb(255, 43, 114);
     font-size:xx-large;
   }
-  
+  .tagline{
+    margin-left: 2vw;
+    height: 90vh;
+  }
   .search_bar{
     display: flex;
     justify-content: center;
@@ -19,8 +22,8 @@
   }
   
   .specials {
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-left: 5vw;
+    padding-top: 2vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -28,9 +31,11 @@
     max-width:100%;
     justify-content: space-between;
     text-align: center;
+    background-color: rgb(255, 225, 177);
   }
   .daily_specials_textarea {
     padding-bottom: 80px;
+    color: rgb(255, 43, 114);
   }
   .daily_specials_textarea h1{
     font-family:'Long Cang',cursive;
@@ -39,7 +44,7 @@
   .daily_specials_textarea a {
     font-size:medium;
     color:whitesmoke;
-    background-color:black;
+    background-color:#083d25;
     border-style:none;
     padding: 10px 40px;
     display: inline-block;
@@ -72,3 +77,15 @@
     text-align: center;
     position: relative;
   }
+.tagline div{
+  display: flex;
+}
+.animation img{
+  position: absolute;
+  z-index: -900;
+  height: 95vh;
+  width: auto;
+  transform: translateX(-22.5vw);
+  /* transform: translateY(-10vh); */
+
+}
