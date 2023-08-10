@@ -3,6 +3,10 @@ import './styles/profile.css';
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import RecipeModal from './recipemodal';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import Popup from "reactjs-popup";
+import ProfilePic from "./profilepicture";
 
 
 function ProfilePage() {
@@ -13,8 +17,7 @@ function ProfilePage() {
     useEffect(() => {
         if (recipeIds) {
             recipeIds.map((id) => {
-                axios.get(`https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`)
-                    .then((response) => {
+                axios.get(`https://api.edamam.com/api/recipes/v2/${encodeURIComponent(id)}?type=public&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`)                    .then((response) => {
                         setRecipeTile((prevRecipes => { return [...prevRecipes, response.data] }));
                         console.log(response.data);
                     })
@@ -44,6 +47,7 @@ function ProfilePage() {
                 window.scrollTo(0, 0);
             }
         }, [showModal])
+
         
 
     return (
@@ -54,13 +58,21 @@ function ProfilePage() {
                 <div className="user_details">
                     <div className="user_primary_details">
                         <h1>Profile</h1>
-                        <p className="pp">(0v0)</p>
+                        <div className="profilepicarea">
+                            <img className="pp" src={cookies['profile-pic']}></img>
+                            <Popup 
+                                trigger={<button className="editpp"><FontAwesomeIcon icon={faPencil}/></button>}  position="right center">
+                                <ProfilePic/>
+                            </Popup>
+                        </div>
+
                         <h3>{cookies['Username']}</h3>
                         <p>{cookies['EmailId']}</p>
                     </div>
+
                     <div className="user_secondary_details">
-                        <p><b>Followers: </b>12</p>
-                        <p><b>Following: </b>20</p>
+                        {/* <p><b>Followers: </b>12</p>
+                        <p><b>Following: </b>20</p> */}
                     </div>
                 </div>
 
