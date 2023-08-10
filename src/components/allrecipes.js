@@ -53,18 +53,6 @@ function AllRecipes() {
                         <Link to={`/search_results?query=${'Sorbet'}`}><li>Sorbet</li></Link>
                         <Link to={`/search_results?query=${'Margarita'}`}><li>Margarita</li></Link>
                         <Link to={`/search_results?query=${'Banana Bread'}`}><li>Banana Bread</li></Link>
-
-
-
-
-
-
-
-
-
-
-
-
                     </ul>
                     {/* {cuisineData.map((keyword)=()=>{
                         <p key={recipe.cuisines}>{recipe.cuisines}</p>

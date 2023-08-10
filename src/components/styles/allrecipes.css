@@ -14,8 +14,9 @@ height: 40vh;}
 .sidebar_menu{
     padding-top: 4vh;
     background-color: #F43D88;
-
-    
+    position: fixed;
+    height: 100%;
+    right: 0;
 }
 .keyword_search{
     margin-left: 1.5vw;
@@ -50,7 +51,7 @@ height: 40vh;}
 }
 .search_button{
     background-color: transparent;
-    color: white;
+    color: rgb(255, 236, 205);
     border: none;
     font-size: large;
     margin-top: 0.3vh;

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import cooking from './Recipe.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import RecipeModal from './recipemodal';
 
 
 function Home() {
@@ -30,6 +31,28 @@ function Home() {
         e.preventDefault();
         window.location.assign(`/search_results?query=${encodeURIComponent(searchItem)}`)
     }
+
+     // Modal
+     const [selectedRecipe, setSelectedRecipe] = useState(null);
+     const [showModal, setShowModal] = useState(false);
+ 
+ 
+     const openModal = (recipe) => {
+         setSelectedRecipe(recipe);
+         document.body.style.overflow = "hidden";
+         setShowModal(true);
+     };
+ 
+     const closeModal = () => {
+         setSelectedRecipe(null);
+         document.body.style.overflow = "auto";
+         setShowModal(false);
+     };
+     useEffect(() => {
+         if (showModal) {
+             window.scrollTo(0, 0);
+         }
+     }, [showModal])
 
 
     return (<>
@@ -60,12 +83,15 @@ function Home() {
                 <div className="random_recipe_items">
                     {randomRecipes.map((randomrecipe) => (
                         <div key={randomrecipe.recipe.uri}>
-                            <img src={randomrecipe.recipe.image} alt={randomrecipe.recipe.label}></img>
-                            <h2>{randomrecipe.recipe.label}</h2>
+                            <img src={randomrecipe.recipe.image} alt={randomrecipe.recipe.label} onClick={() => openModal(randomrecipe.recipe)} ></img>
+                            <h2 onClick={() => openModal(randomrecipe.recipe)} >{randomrecipe.recipe.label}</h2>
                         </div>
                     ))}
                 </div>
             </div>
+            {selectedRecipe && (
+                <RecipeModal isOpen={showModal} onClose={closeModal} recipeDetails={selectedRecipe} />)}
+            {showModal && <div className="backdrop" onClick={closeModal}></div>}
         </section>
     </>
     )

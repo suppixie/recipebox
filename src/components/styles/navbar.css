@@ -5,7 +5,9 @@
     padding-left: 2vw;
     height: 10vmin;
     color: rgb(210, 35, 94);
-
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 .pages ul{

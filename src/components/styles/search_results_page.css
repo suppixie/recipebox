@@ -5,9 +5,9 @@
     color: rgb(255, 43, 114);
 }
 .results{
-    width: 88%;
+    /* width: 100%; */
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 21% 21% 21% 21%;
 
 }
 .search_slide{

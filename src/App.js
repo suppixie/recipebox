@@ -18,12 +18,10 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/Categories' element={< AllRecipes />}></Route>
-        {/* <Route path='/Login' element={<LoginPage/>}></Route> */}
         <Route path='/SignUp' element={<SignUpPage />}></Route>
         <Route path='/Profile' element={<ProfilePage />}></Route>
         <Route path='/search_results' element={<SearchResults />}></Route>
         <Route path='/allrecipes' element={<AllRecipes />}></Route>
-
       </Routes>
     </div>
   )
