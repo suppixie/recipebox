@@ -6,9 +6,7 @@ import RecipeModal from "./recipemodal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import Popup from "reactjs-popup";
 import {  useCookies } from "react-cookie";
-import WhatsappButton from "./whatsappcopy";
 
 function CategoryRecipes({ heading }) {
     const [categoryData, setCategoryData] = useState([]);
@@ -51,7 +49,7 @@ function CategoryRecipes({ heading }) {
     // 
 
     const [cookies, setCookie] = useCookies(['recipeIds']);
-
+    
     const handleRecipeUri = (uri) => {
         var url = String(uri).split("recipe_")[1];
         var ids = [];
@@ -61,6 +59,7 @@ function CategoryRecipes({ heading }) {
         ids.push(url)
         setCookie('recipeIds', ids, { path: '/' });
         console.log(cookies.recipeIds)
+        alert("Saved to Profile");
 
     }
     const [likeCount, setLikeCount] = useState(0);
@@ -89,10 +88,11 @@ function CategoryRecipes({ heading }) {
 
     return (
         <div className="category snacks_recipe_list">
-            <h2>{heading}</h2>
+            <h2 className="category_heading">{heading}</h2>
 
             <Slider  {...settings}>
                 {categoryData.map((result) => (
+                    
                     <div key={result.recipe.uri} className="slide" >
                         <img onClick={() => openModal(result.recipe)} src={result.recipe.image} alt={result.recipe.label} ></img>
                         <p onClick={() => openModal(result.recipe)}>{result.recipe.label}</p>

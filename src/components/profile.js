@@ -10,7 +10,7 @@ import ProfilePic from "./profilepicture";
 
 
 function ProfilePage() {
-    const [cookies] = useCookies([])
+    const [cookies,removeCookie] = useCookies([])
     const recipeIds = (cookies.recipeIds);
     const [recipeTile, setRecipeTile] = useState([]);
 
@@ -47,8 +47,8 @@ function ProfilePage() {
                 window.scrollTo(0, 0);
             }
         }, [showModal])
-
         
+   
 
     return (
         <>
@@ -71,8 +71,6 @@ function ProfilePage() {
                     </div>
 
                     <div className="user_secondary_details">
-                        {/* <p><b>Followers: </b>12</p>
-                        <p><b>Following: </b>20</p> */}
                     </div>
                 </div>
 

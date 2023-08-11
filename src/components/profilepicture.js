@@ -17,13 +17,14 @@ function ProfilePic(){
     ]
     const [cookies, setCookie] = useCookies(['recipeIds']);
     const [selectedPP,setSelectedPP]=useState('')
+    const [pp, setPp]=useState(['profile-pic']);
 
     useEffect(() => {
         const savedProfilePic = cookies["profile-pic"];
         if (savedProfilePic) {
             setSelectedPP(savedProfilePic);
         } else {
-            setSelectedPP(ppOptionsList[0]);
+            setPp(ppOptionsList[0]);
         }
     }, []);
 

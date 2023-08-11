@@ -11,7 +11,6 @@ function Instructions(props) {
 
     const openai = new OpenAIApi(configuration);
 
-    const [result, setResult] = useState([]);
 
     const prompt = `give me the instructions to cook, in bullets without displaying ingredients again-
      recipe: ${props.label}
@@ -29,9 +28,8 @@ function Instructions(props) {
 
         const instructionDetails = response.data.choices[0].text
         let sentences = instructionDetails.match(/(?<=• ).+?(?=\n|$)/g);
-        //    sentences = sentences.filter(element => isNaN(element));
         console.log(sentences);
-        setResult(sentences);
+        props.setWpInstructions(sentences);
     }
     useEffect(() => {
         generateInstructions();
@@ -40,7 +38,7 @@ function Instructions(props) {
     return (
         <div className="instructions">
             <h3>Instructions</h3>
-            {result.map((instruction, index) => {
+            {props.wpInstructions.map((instruction, index) => {
                 return (
                     <div>
                         <ul>

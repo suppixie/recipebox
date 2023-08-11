@@ -8,65 +8,139 @@
     width: 80%;
     height: 80%;
     transform: translate(8%, -36%);
-    z-index: 9999; /* Set a high z-index value to ensure the modal appears on top */
+    z-index: 1000; 
     background-color: white;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
+.recipe_primary_details{
+    width: 30%;
+}
 .ingredients_and_instructions{
     margin-left: 2vw;
     overflow-y: scroll;
-color: black;}
+    color: black;
+    width: 100%;
+}
 
 .ingredients_and_instructions h2, hr{
     background-color: white;
-    margin-left: 0 ;
-    margin-right: 0;
+    margin:0;
+    margin-bottom: 1vh;
     color: rgb(255, 43, 114);
 }
-
+.ingredients_and_instructions .recipe_title{
+    align-items:flex-start;
+    display: flex;
+    justify-content: space-between;
+}
 .recipe_primary_details img{
     border-radius: 15px;
+    max-height: 47vh;
 }
 /* .recipe_primary_details div h2{
     margin: 0;
     padding: 0;
 } */
-.recipe_primary_details .closemodal{
-    transform: translateX(76vw);
+ .closemodal{
     background-color: rgb(214, 56, 56);
     color: white;
     font-weight:bold;
     border: none;
     padding: 1vh 1.5vh;
     border-radius: 6px;
-    position: absolute;
+    transform: translateX(49vw);
+    position: fixed;
 }
 .recipe_primary_details div{
     display: flex;
-    margin-top: 1.5vh;
+    margin-top: 1vh;
 }
 .icons{
     font-size: x-large;
 }
+
 .recipe_primary_details p{
     background-color: #094027;
     color: aliceblue;
     border-radius: 8px;
     padding:1.5vh 1.5vh;
-    margin: 0 1vh;
+    margin-top: 0;
+    margin-right: 1.5vh;
     margin-bottom: 0.5vh;
     align-items: center;
     text-align: center;
+    width: 6vw;
+    font-size: 0.9em;
+
 }
-.recipe_primary_details .save_button{
-    margin: 1vh 2vh;
-    width: 90%;
+
+.recipe_primary_details .save_button , .whatsapp_button{
+    margin: 1vh 0;
+    margin-right: 0.6vw;
     text-align: center;
     background-color: rgb(255, 43, 114);
     color: white;
-    border-radius: 10px;
-    padding: 0.8vh 0.5vh;
+    border-radius: 7px;
+    border: none;
+    padding: 1vh 1vh;
+}
+.recipe_primary_details .save_button{
+    width: 60%;
+    font-size: 1em;
+}
+.recipe_primary_details .fa{
+    font-size: 2.5vh;
+}
+.recipe_primary_details .whatsapp_button{
+    width: 35%;
+    font-size: 1em;
+    margin-right: 0;
+}
+.whatsapp_button img{
+    height: 3vh;
+    color: white !important;
+    /* stroke: white; */
+}
+
+.wp_popup{
+    background-color:#094027;
+    position: fixed;
+    padding: 2vh;
+    color: white;
+    border-radius: 15px;
+    margin-left: 1vw;
+    transform: translateY(-1vh);
+}
+
+.wp_popup input{
+    margin: 0;
+    padding: 0.8vh;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 70%;
+}
+.wp_popup button{
+    margin-left: 0.8vw;
+    border: none;
+    padding: 0.9vh;
+    border-radius: 7px;
+    background-color: white;
+
+}
+.wp_popup h4{
+    margin: 0;
+    margin-bottom: 2vh;
+    color: antiquewhite;
+}
+.popup-content{
+    z-index: 1000 !important;
+}
+.popup-arrow{
+    height: 2vh;
+    color: #094027;
+    transform: translate(-1.4VW,0.9vw);
+
 }
