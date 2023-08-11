@@ -18,6 +18,7 @@ function RecipeModal({ isOpen, onClose, recipeDetails }) {
         console.log(cookies.recipeIds)
     }
     if (!isOpen) return null;
+]
 
     return (
         <div className="details">
@@ -30,6 +31,10 @@ function RecipeModal({ isOpen, onClose, recipeDetails }) {
                     <p className="servings"><FontAwesomeIcon className="icons" icon={faUserGroup} /><br /><b> Servings</b><br />{recipeDetails.yield}</p>
                 </div>
                 <button className="save_button" onClick={e=>handleSave(recipeDetails.uri)}><FontAwesomeIcon icon={faBookmark} /> Save</button>
+                <button className="copy_button"></button>
+                <Popup trigger={<button className="whatsapp_button" onClick={() => setSelectedRecipe(result.recipe.uri)}></button>}>
+                        <WhatsappButton recipeDetails={result.recipe}/>
+                </Popup>
 
             </div>
             <div className="ingredients_and_instructions">

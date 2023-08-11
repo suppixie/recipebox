@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Popup from "reactjs-popup";
-import { Cookies, useCookies } from "react-cookie";
+import {  useCookies } from "react-cookie";
+import WhatsappButton from "./whatsappcopy";
 
 function CategoryRecipes({ heading }) {
     const [categoryData, setCategoryData] = useState([]);
@@ -58,16 +59,21 @@ function CategoryRecipes({ heading }) {
             ids = cookies.recipeIds;
         }
         ids.push(url)
-        setCookie('recipeIds',ids, { path: '/' });
+        setCookie('recipeIds', ids, { path: '/' });
         console.log(cookies.recipeIds)
 
     }
-    const [likeCount, setLikeCount] = useState({});
-    const handleLikeCount = (uri) => {
-        setLikeCount((prevCounts) => ({
-            ...prevCounts,
-            [uri]: (prevCounts[uri] || 0) + 1,
-        }));
+    const [likeCount, setLikeCount] = useState(0);
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeCount = () => {
+        if (liked) {
+            setLikeCount((prevCount) => prevCount - 1);
+          } else {
+            setLikeCount((prevCount) => prevCount + 1);
+          }
+          setLiked((prevLiked) => !prevLiked);
+
     };
 
 
@@ -93,9 +99,9 @@ function CategoryRecipes({ heading }) {
                         <div className="save_like_buttons">
                             <button className="save_button" onClick={() => handleRecipeUri(result.recipe.uri)}>
                                 <FontAwesomeIcon icon={faBookmark} /></button>
-                            <button className="like_button" onClick={() => handleLikeCount(result.recipe.uri)}>
-                                <FontAwesomeIcon icon={faHeart} /> {likeCount[result.recipe.uri] || 0}</button>
-
+                            <button className="like_button" onClick={handleLikeCount}>
+                                <FontAwesomeIcon icon={faHeart} /> {likeCount}</button>
+                           
                         </div>
                     </div>
                 ))}
