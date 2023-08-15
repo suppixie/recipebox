@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# RECIPE BOX 
+<hr>
+Recipebox is a Recipe Search WebApp. It is feature-rich and user-friendly, designed to cater to the needs of cooking enthusiast sand food lovers. The vast recipe database with over 2 lakh recipes, robust search functionality and detailed recipe information with food labels etc allows users to easily search for their favourite recipes, explore new dishes, and discover exciting cooking ideas even as a health-conscious individual. Through API integration, it remains up-to-date with the latest culinary trends, making it a reliable source for all things cooking. The user can search for a recipe by its name, any ingredient, cuisine type or meal type. Recipebox allows the users to have personalized profiles where they can save the recipes to their profile CookBooks to view them later or store them.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features 
+- Recipe Search
+- Daily Specials
+- Category Page to explore all recipes
+- Save recipes to profile
+- Share recipes through WhatsApp
+  
+## Tech Used
+<p>
+<img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>&nbsp; &nbsp; 
+<img alt="Javascript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> &nbsp; &nbsp; 
+<img alt="Edamam-API" src="https://img.shields.io/badge/Edamam_API?style=for-the-badge&logo=api&logoColor=orange"/> &nbsp; &nbsp;
+<img alt="OpenAI-API" src="https://img.shields.io/badge/OpenAI_API?style=for-the-badge&logo=api&logoColor=pink"/> &nbsp; &nbsp;
+<img alt="Nodejs" src="https://img.shields.io/badge/Node_js?style=for-the-badge&logo=nodejs&logoColor=white"/> &nbsp; &nbsp;</p>
 
-## Available Scripts
+##UI
+<img width="550" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/19e9906b-a773-4b64-8854-f97e41b8ddfb">
+<img width="550" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/bdbd3f48-bf4d-4a55-9a7c-d13d36625032">
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
