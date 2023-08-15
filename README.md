@@ -13,11 +13,11 @@ Recipebox is a Recipe Search WebApp. It is feature-rich and user-friendly, desig
 <p>
 <img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>&nbsp; &nbsp; 
 <img alt="Javascript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> &nbsp; &nbsp; 
-<img alt="Edamam-API" src="https://img.shields.io/badge/Edamam_API?style=for-the-badge&logo=api&logoColor=orange"/> &nbsp; &nbsp;
-<img alt="OpenAI-API" src="https://img.shields.io/badge/OpenAI_API?style=for-the-badge&logo=api&logoColor=pink"/> &nbsp; &nbsp;
-<img alt="Nodejs" src="https://img.shields.io/badge/Node_js?style=for-the-badge&logo=nodejs&logoColor=white"/> &nbsp; &nbsp;</p>
+<img alt="Nodejs" src="https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&"/> &nbsp; &nbsp;
+<img alt="css" src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat)"/> &nbsp; &nbsp;
+<img alt="axios" src="https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=fff&style=flat"/></p>
 
-##UI
-<img width="550" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/19e9906b-a773-4b64-8854-f97e41b8ddfb">
-<img width="550" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/bdbd3f48-bf4d-4a55-9a7c-d13d36625032">
+## UI
+<img width="475" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/19e9906b-a773-4b64-8854-f97e41b8ddfb"> &nbsp;
+<img width="475" alt="image" src="https://github.com/suppixie/recipebox/assets/100701261/bdbd3f48-bf4d-4a55-9a7c-d13d36625032">
 
